@@ -24,6 +24,9 @@ body {
     color: var(--gray-dark);
     min-height: 100vh;
     padding-bottom: 80px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ========== TIPOGRAFIA ========== */
@@ -106,6 +109,8 @@ h1, h2, h3 {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .page.active {
@@ -724,25 +729,580 @@ h1, h2, h3 {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+    body {
+        padding-bottom: 70px;
+    }
+
+    .page {
+        padding: 15px;
+    }
+
     .app-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .app-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .app-header {
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    .app-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-container {
+        gap: 0.75rem;
     }
 
     .summary-grid {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .summary-card {
+        padding: 1rem;
+    }
+
+    .summary-icon-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .summary-content h3 {
+        font-size: 1rem;
+    }
+
+    .summary-content p {
+        font-size: 0.85rem;
     }
 
     .action-buttons {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .action-btn {
+        padding: 0.875rem;
+        font-size: 0.9rem;
     }
 
     .pet-display {
         flex-direction: column;
         text-align: center;
+        gap: 1rem;
+    }
+
+    .pet-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+    }
+
+    .pet-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .pet-widget {
+        padding: 1.25rem;
+    }
+
+    .card {
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .card h2 {
+        font-size: 1.3rem;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
     }
 
     .container {
         padding: 0 10px;
+    }
+
+    .page-header {
+        margin-bottom: 1.5rem;
+        padding-top: 0.5rem;
+    }
+
+    .page-header-content {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+
+    .page-header-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .page-header p {
+        font-size: 0.9rem;
+    }
+
+    .balance-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .balance-amount {
+        font-size: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.65rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-primary {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .list-item {
+        padding: 0.875rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .list-item-icon {
+        width: 35px;
+        height: 35px;
+        margin-right: 0.75rem;
+    }
+
+    .list-item-content {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .list-item-title {
+        font-size: 0.95rem;
+    }
+
+    .list-item-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .list-item-amount {
+        font-size: 1rem;
+    }
+
+    .delete-btn {
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        font-size: 1.3rem;
+    }
+
+    .meditation-options {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .meditation-btn {
+        padding: 0.875rem;
+        font-size: 0.9rem;
+    }
+
+    .stats-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .stat-item {
+        padding: 1.25rem;
+    }
+
+    .stat-value {
+        font-size: 1.6rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    .pet-avatar-large {
+        width: 120px;
+        height: 120px;
+        font-size: 5rem;
+    }
+
+    .profile-pet h3 {
+        font-size: 1.5rem;
+    }
+
+    .profile-pet p {
+        font-size: 1rem;
+    }
+
+    .achievement-item {
+        padding: 0.875rem;
+        gap: 0.75rem;
+    }
+
+    .achievement-icon,
+    .achievement-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .achievement-content h4 {
+        font-size: 1rem;
+    }
+
+    .achievement-content p {
+        font-size: 0.85rem;
+    }
+
+    .goal-item {
+        padding: 0.875rem;
+    }
+
+    .habit-item {
+        padding: 0.875rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .complete-habit-btn {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .motivational-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-bottom: 65px;
+    }
+
+    .page {
+        padding: 12px;
+    }
+
+    .app-title {
+        font-size: 1.5rem;
+    }
+
+    .app-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .app-header {
+        padding: 1rem 0.75rem 0.75rem;
+    }
+
+    .app-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-container {
+        gap: 0.5rem;
+    }
+
+    .card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    .pet-widget {
+        padding: 1rem;
+    }
+
+    .pet-avatar {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+
+    .pet-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .xp-bar {
+        height: 10px;
+    }
+
+    .xp-text {
+        font-size: 0.8rem;
+    }
+
+    .summary-card {
+        padding: 0.875rem;
+    }
+
+    .summary-icon-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .summary-content h3 {
+        font-size: 0.95rem;
+    }
+
+    .summary-content p {
+        font-size: 0.8rem;
+    }
+
+    .action-btn {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .action-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .page-header p {
+        font-size: 0.85rem;
+    }
+
+    .page-header-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .balance-amount {
+        font-size: 1.75rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    .list-item {
+        padding: 0.75rem;
+    }
+
+    .list-item-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 0.5rem;
+    }
+
+    .list-item-title {
+        font-size: 0.9rem;
+    }
+
+    .list-item-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .list-item-amount {
+        font-size: 0.95rem;
+    }
+
+    .meditation-options {
+        grid-template-columns: 1fr;
+    }
+
+    .meditation-btn {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .stats-list {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .pet-avatar-large {
+        width: 100px;
+        height: 100px;
+        font-size: 4rem;
+    }
+
+    .profile-pet {
+        padding: 1.5rem 0;
+    }
+
+    .profile-pet h3 {
+        font-size: 1.3rem;
+    }
+
+    .profile-pet p {
+        font-size: 0.95rem;
+    }
+
+    .achievement-item {
+        padding: 0.75rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .achievement-icon,
+    .achievement-item img {
+        width: 45px;
+        height: 45px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+
+    .motivational-text {
+        font-size: 0.95rem;
+    }
+
+    .goal-item {
+        padding: 0.75rem;
+    }
+
+    .habit-item {
+        padding: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .habit-name {
+        margin-bottom: 0.25rem;
+    }
+
+    .complete-habit-btn {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Ajustes para navegação em telas pequenas */
+@media (max-width: 768px) {
+    .bottom-nav {
+        padding: 10px 0;
+    }
+
+    .nav-item {
+        padding: 6px 12px;
+    }
+
+    .nav-icon-img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .nav-label {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bottom-nav {
+        padding: 8px 0;
+    }
+
+    .nav-item {
+        padding: 5px 8px;
+    }
+
+    .nav-icon-img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .nav-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* Ajustes para imagens responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevenir quebra de texto indesejada */
+h1, h2, h3, h4, p, span, label {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Ajustes para inputs em mobile */
+@media (max-width: 768px) {
+    input[type="number"],
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        font-size: 16px; /* Previne zoom automático no iOS */
+    }
+}
+
+/* Melhorias de toque para dispositivos móveis */
+@media (max-width: 768px) {
+    .action-btn,
+    .btn-primary,
+    .meditation-btn,
+    .complete-habit-btn,
+    .delete-btn {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    .summary-card,
+    .card {
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
@@ -778,6 +1338,8 @@ h1, h2, h3 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .text-center {
