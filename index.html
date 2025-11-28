@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbaura - Seu Companheiro Felino</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bottom-nav">
+        <a href="#home" class="nav-item active" data-page="home">
+            <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=50&h=50&fit=crop" alt="Início" class="nav-icon-img">
+            <span class="nav-label">Início</span>
+        </a>
+        <a href="#finance" class="nav-item" data-page="finance">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=50&h=50&fit=crop" alt="Finanças" class="nav-icon-img">
+            <span class="nav-label">Finanças</span>
+        </a>
+        <a href="#fitness" class="nav-item" data-page="fitness">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=50&h=50&fit=crop" alt="Fitness" class="nav-icon-img">
+            <span class="nav-label">Fitness</span>
+        </a>
+        <a href="#mental" class="nav-item" data-page="mental">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=50&h=50&fit=crop" alt="Mental" class="nav-icon-img">
+            <span class="nav-label">Mental</span>
+        </a>
+        <a href="#profile" class="nav-item" data-page="profile">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=50&h=50&fit=crop" alt="Perfil" class="nav-icon-img">
+            <span class="nav-label">Perfil</span>
+        </a>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <header class="app-header">
+            <div class="logo-container">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=80&h=80&fit=crop&crop=center" alt="Barbaura" class="app-logo">
+                <h1 class="app-title">Barbaura</h1>
+            </div>
+            <p class="app-subtitle">Seu companheiro felino para uma vida equilibrada</p>
+        </header>
+
+        <div class="container">
+            <!-- Pet Widget -->
+            <div class="pet-widget card">
+                <div class="pet-display">
+                    <div class="pet-avatar" id="petAvatar">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop&crop=center" alt="Pet" class="pet-avatar-img">
+                    </div>
+                    <div class="pet-info">
+                        <h3 id="petName">Barbaura</h3>
+                        <p class="pet-level">Nível <span id="petLevel">1</span></p>
+                        <div class="xp-bar">
+                            <div class="xp-fill" id="xpFill" style="width: 0%"></div>
+                        </div>
+                        <p class="xp-text"><span id="currentXP">0</span> / <span id="nextLevelXP">100</span> XP</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="summary-grid">
+                <div class="summary-card card" data-module="finance">
+                    <div class="summary-icon">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=100&h=100&fit=crop" alt="Finanças" class="summary-icon-img">
+                    </div>
+                    <div class="summary-content">
+                        <h3>Cofre do Ronrom</h3>
+                        <p id="financeSummary">0 transações hoje</p>
+                    </div>
+                </div>
+                <div class="summary-card card" data-module="fitness">
+                    <div class="summary-icon">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=100&h=100&fit=crop" alt="Fitness" class="summary-icon-img">
+                    </div>
+                    <div class="summary-content">
+                        <h3>Academia da Patinha</h3>
+                        <p id="fitnessSummary">0 treinos hoje</p>
+                    </div>
+                </div>
+                <div class="summary-card card" data-module="mental">
+                    <div class="summary-icon">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=100&h=100&fit=crop" alt="Mental" class="summary-icon-img">
+                    </div>
+                    <div class="summary-content">
+                        <h3>Jardim da Serenidade</h3>
+                        <p id="mentalSummary">0 atividades hoje</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2 class="section-title">Ações Rápidas</h2>
+                <div class="action-buttons">
+                    <button class="action-btn" data-action="add-transaction">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=30&h=30&fit=crop" alt="Adicionar" class="action-icon"> Adicionar Gasto
+                    </button>
+                    <button class="action-btn" data-action="log-workout">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=30&h=30&fit=crop" alt="Treino" class="action-icon"> Registrar Treino
+                    </button>
+                    <button class="action-btn" data-action="check-mood">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=30&h=30&fit=crop" alt="Humor" class="action-icon"> Check-in Emocional
+                    </button>
+                    <button class="action-btn" data-action="meditate">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=30&h=30&fit=crop" alt="Meditar" class="action-icon"> Meditar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Motivational Message -->
+            <div class="motivational-card card">
+                <p class="motivational-text" id="motivationalMessage">Miau! Vamos começar sua jornada de autocuidado hoje?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Finance Page -->
+    <div id="finance" class="page">
+        <header class="page-header">
+            <div class="page-header-content">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=60&h=60&fit=crop" alt="Finanças" class="page-header-icon">
+                <div>
+                    <h1>Cofre do Ronrom</h1>
+                    <p>Gerencie suas finanças com a ajuda do seu gato guardião</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Balance Card -->
+            <div class="balance-card card">
+                <h3>Saldo Atual</h3>
+                <p class="balance-amount" id="currentBalance">R$ 0,00</p>
+            </div>
+
+            <!-- Add Transaction -->
+            <div class="card">
+                <h2>Nova Transação</h2>
+                <form id="transactionForm">
+                    <div class="form-group">
+                        <label>Tipo</label>
+                        <select id="transactionType" required>
+                            <option value="income">Receita</option>
+                            <option value="expense">Despesa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Valor</label>
+                        <input type="number" id="transactionAmount" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Categoria</label>
+                        <select id="transactionCategory" required>
+                            <option value="alimentacao">Alimentação</option>
+                            <option value="transporte">Transporte</option>
+                            <option value="saude">Saúde</option>
+                            <option value="lazer">Lazer</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <input type="text" id="transactionDescription" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Adicionar</button>
+                </form>
+            </div>
+
+            <!-- Transactions List -->
+            <div class="card">
+                <h2>Últimas Transações</h2>
+                <div id="transactionsList" class="transactions-list"></div>
+            </div>
+
+            <!-- Goals -->
+            <div class="card">
+                <h2>Metas de Economia</h2>
+                <form id="goalForm">
+                    <div class="form-group">
+                        <label>Nome da Meta</label>
+                        <input type="text" id="goalName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Valor Alvo</label>
+                        <input type="number" id="goalAmount" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Criar Meta</button>
+                </form>
+                <div id="goalsList" class="goals-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fitness Page -->
+    <div id="fitness" class="page">
+        <header class="page-header">
+            <div class="page-header-content">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=60&h=60&fit=crop" alt="Fitness" class="page-header-icon">
+                <div>
+                    <h1>Academia da Patinha</h1>
+                    <p>Transforme seu corpo com treinos personalizados</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Log Workout -->
+            <div class="card">
+                <h2>Registrar Treino</h2>
+                <form id="workoutForm">
+                    <div class="form-group">
+                        <label>Tipo de Treino</label>
+                        <select id="workoutType" required>
+                            <option value="hiit">HIIT</option>
+                            <option value="forca">Força</option>
+                            <option value="yoga">Yoga</option>
+                            <option value="pilates">Pilates</option>
+                            <option value="cardio">Cardio</option>
+                            <option value="alongamento">Alongamento</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Duração (minutos)</label>
+                        <input type="number" id="workoutDuration" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Intensidade</label>
+                        <select id="workoutIntensity" required>
+                            <option value="leve">Leve</option>
+                            <option value="moderada">Moderada</option>
+                            <option value="intensa">Intensa</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Registrar</button>
+                </form>
+            </div>
+
+            <!-- Workouts List -->
+            <div class="card">
+                <h2>Histórico de Treinos</h2>
+                <div id="workoutsList" class="workouts-list"></div>
+            </div>
+
+            <!-- Calories -->
+            <div class="card">
+                <h2>Registrar Refeição</h2>
+                <form id="caloriesForm">
+                    <div class="form-group">
+                        <label>Alimento/Refeição</label>
+                        <input type="text" id="foodName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Calorias</label>
+                        <input type="number" id="foodCalories" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Refeição</label>
+                        <select id="mealType" required>
+                            <option value="cafe">Café da Manhã</option>
+                            <option value="almoco">Almoço</option>
+                            <option value="lanche">Lanche</option>
+                            <option value="jantar">Jantar</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Adicionar</button>
+                </form>
+            </div>
+
+            <!-- Calories List -->
+            <div class="card">
+                <h2>Diário Alimentar</h2>
+                <div id="caloriesList" class="calories-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mental Page -->
+    <div id="mental" class="page">
+        <header class="page-header">
+            <div class="page-header-content">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=60&h=60&fit=crop" alt="Mental" class="page-header-icon">
+                <div>
+                    <h1>Jardim da Serenidade</h1>
+                    <p>Cuide da sua saúde mental com carinho</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Mood Check-in -->
+            <div class="card">
+                <h2>Como você está se sentindo?</h2>
+                <form id="moodForm">
+                    <div class="form-group">
+                        <label>Humor</label>
+                        <select id="moodEmoji" required>
+                            <option value="😊">Feliz</option>
+                            <option value="😌">Calmo</option>
+                            <option value="😢">Triste</option>
+                            <option value="😰">Ansioso</option>
+                            <option value="😴">Cansado</option>
+                            <option value="😡">Irritado</option>
+                            <option value="🤗">Grato</option>
+                            <option value="😎">Confiante</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nota (1-10)</label>
+                        <input type="number" id="moodRating" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Observações (opcional)</label>
+                        <textarea id="moodNotes" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Registrar</button>
+                </form>
+            </div>
+
+            <!-- Moods List -->
+            <div class="card">
+                <h2>Histórico de Humor</h2>
+                <div id="moodsList" class="moods-list"></div>
+            </div>
+
+            <!-- Journal -->
+            <div class="card">
+                <h2>Diário Reflexivo</h2>
+                <form id="journalForm">
+                    <div class="form-group">
+                        <label>Entrada</label>
+                        <textarea id="journalEntry" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Salvar</button>
+                </form>
+            </div>
+
+            <!-- Journal Entries -->
+            <div class="card">
+                <h2>Entradas do Diário</h2>
+                <div id="journalList" class="journal-list"></div>
+            </div>
+
+            <!-- Habits -->
+            <div class="card">
+                <h2>Rastreador de Hábitos</h2>
+                <form id="habitForm">
+                    <div class="form-group">
+                        <label>Nome do Hábito</label>
+                        <input type="text" id="habitName" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Criar Hábito</button>
+                </form>
+                <div id="habitsList" class="habits-list"></div>
+            </div>
+
+            <!-- Meditations -->
+            <div class="card">
+                <h2>Meditações Guiadas</h2>
+                <div class="meditation-options">
+                    <button class="meditation-btn" data-duration="5">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=30&h=30&fit=crop" alt="Meditar" class="meditation-icon"> 5 min
+                    </button>
+                    <button class="meditation-btn" data-duration="10">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=30&h=30&fit=crop" alt="Meditar" class="meditation-icon"> 10 min
+                    </button>
+                    <button class="meditation-btn" data-duration="15">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=30&h=30&fit=crop" alt="Meditar" class="meditation-icon"> 15 min
+                    </button>
+                    <button class="meditation-btn" data-duration="30">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=30&h=30&fit=crop" alt="Meditar" class="meditation-icon"> 30 min
+                    </button>
+                </div>
+                <div id="meditationsList" class="meditations-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profile" class="page">
+        <header class="page-header">
+            <div class="page-header-content">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop" alt="Perfil" class="page-header-icon">
+                <div>
+                    <h1>Perfil</h1>
+                    <p>Seu progresso e conquistas</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Profile Info -->
+            <div class="card">
+                <h2>Seu Companheiro</h2>
+                <div class="profile-pet">
+                    <div class="pet-avatar-large" id="profilePetAvatar">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop&crop=center" alt="Pet" class="pet-avatar-large-img">
+                    </div>
+                    <h3 id="profilePetName">Barbaura</h3>
+                    <p>Nível <span id="profilePetLevel">1</span></p>
+                    <p>Total XP: <span id="profileTotalXP">0</span></p>
+                </div>
+                <div class="form-group">
+                    <label>Escolher Pet</label>
+                    <select id="petTypeSelect">
+                        <option value="cat">Gato</option>
+                        <option value="panda">Panda</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="card">
+                <h2>Conquistas</h2>
+                <div id="achievementsList" class="achievements-list"></div>
+            </div>
+
+            <!-- Stats -->
+            <div class="card">
+                <h2>Estatísticas</h2>
+                <div id="statsList" class="stats-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+
